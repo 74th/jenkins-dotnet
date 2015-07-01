@@ -4,7 +4,12 @@ MAINTAINER 74th<site@j74th.com>
 RUN apt-get update
 
 # install mono
-RUN apt-get install -y mono-devel
+RUN apt-get install -y mono-complete
+
+# install nuget
+# ADD https://nuget.org/nuget.exe /root/
+# RUN echo "mono \$*" > /usr/bin/nuget
+RUN apt-get install -y nuget
 
 # install jenkins
 ADD https://jenkins-ci.org/debian/jenkins-ci.org.key /root/jenkins-ci.org.key

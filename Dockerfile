@@ -1,10 +1,10 @@
-FROM debian:8.1
+FROM ubuntu:15.04
 MAINTAINER 74th<site@j74th.com>
 
 RUN apt-get update
 
 # install mono
-RUN apt-get install -y mono-devel
+RUN apt-get install -y mono-complete
 
 # install jenkins
 ADD https://jenkins-ci.org/debian/jenkins-ci.org.key /root/jenkins-ci.org.key

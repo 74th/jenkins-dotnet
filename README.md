@@ -5,9 +5,7 @@ We need windows servers for .NET CI, this presented Linux contener with mono pro
 
 ```
 docker pull 74th/jenkins4dotnet
-docker run -d --name jenkins4dotnet ^
-    -p 8080:8080 ^
-    74th/jenkins4dotnet
+docker run -d --name jenkins4dotnet -p 8080:8080 74th/jenkins4dotnet
 ```
 
 You can access http://dockerip:8080/ .

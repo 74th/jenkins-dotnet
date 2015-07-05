@@ -10,12 +10,16 @@ docker run -d --name jenkins4dotnet -p 8080:8080 74th/jenkins4dotnet
 
 You can access http://dockerip:8080/ .
 
+## Features
+
+* no need to use windows server
+
 ## for Japanese
 
 .NET プロジェクト用のJenkinsイメージです。
 .NET のCIのためにはWindowsServerが必要でしたが、monoを使ってLinuxコンテナで実現します。
 
-## feature
+## goals
 
 * support Nuget
 * support local Nuget repositories

@@ -8,16 +8,25 @@ docker pull 74th/jenkins4dotnet
 docker run -d --name jenkins4dotnet -p 8080:8080 74th/jenkins4dotnet
 ```
 
-You can access http://dockerip:8080/ .
+You can access http://yourdockerip:8080/ .
 
 ## Features
 
 * no need to use windows server
+* include MSBuild plugin
+
+## how to build .NET solution
+
+In build of configulation, choose "Build a Visual Studio project or solution using MSBuild" and set your visual studio solution file.
 
 ## for Japanese
 
 .NET プロジェクト用のJenkinsイメージです。
 .NET のCIのためにはWindowsServerが必要でしたが、monoを使ってLinuxコンテナで実現します。
+
+## 使い方
+
+ビルドの設定において、"Build a Visual Studio project or solution using MSBuild" を選び、MSBuild Build File に、ソリューションファイル（.sln）を指定します。
 
 ## goals
 

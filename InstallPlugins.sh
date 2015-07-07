@@ -4,6 +4,8 @@ service jenkins start
 echo waiting for jenkins start
 sleep 1m
 
+# TODO behind proxy
+
 # get jenkins cli command
 echo wget http://127.0.0.1:8080/jnlpJars/jenkins-cli.jar
 wget http://127.0.0.1:8080/jnlpJars/jenkins-cli.jar

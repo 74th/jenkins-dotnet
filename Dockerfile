@@ -26,11 +26,13 @@ RUN ln -s /usr/bin/xbuild /usr/bin/msbuild.exe
 
 # jenkins port
 EXPOSE 8080
+# TODO slave port
+# EXPOSE 5000
 
 # jenkins home
 # VOLUME /var/lib/jenkins
 # VOLUME /var/log/jenkins
 
-# RUN echo "hoge" > /var/log/jenkins/jenkins.log
-# RUN chown jenkins:jenkins /var/log/jenkins/jenkins.log
-ENTRYPOINT touch /var/log/jenkins/jenkins.log | chown jenkins:jenkins /var/log/jenkins/jenkins.log | service jenkins start | tail -f /var/log/jenkins/jenkins.log
+# entrypoint
+ADD entrypoint.sh /root/entrypoint.sh
+ENTRYPOINT /root/entrypoint.sh

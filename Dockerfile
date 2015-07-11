@@ -2,7 +2,7 @@ FROM ubuntu:15.04
 MAINTAINER 74th<site@j74th.com>
 
 RUN apt-get update
-RUN apt-get install -y wget git
+RUN apt-get install -y wget git net-tools
 
 # install mono
 RUN apt-get install -y mono-complete
@@ -18,7 +18,7 @@ RUN apt-get update
 RUN apt-get install -y jenkins
 
 # install plugins 
-ADD ./InstallPlugins.sh /root/ 
+ADD ./InstallPlugins.sh /root/
 RUN sh /root/InstallPlugins.sh
 
 # msbuild.exe
@@ -35,4 +35,4 @@ EXPOSE 8080
 
 # entrypoint
 ADD entrypoint.sh /root/entrypoint.sh
-ENTRYPOINT /root/entrypoint.sh
+ENTRYPOINT sh /root/entrypoint.sh
